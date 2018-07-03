@@ -1,0 +1,177 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.navigator-view {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid #eee;
+}
+
+.navigator-view .navigator-cont {
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  background-color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+.navigator-view .navigator-icon {
+  width: 25px;
+  height: 25px;
+}
+.navigator-text {
+  /* width: 100%; */
+  height: 16px;
+  font-size: 12px;
+  display: block;
+  margin-top:-30px;
+  z-index: 20;
+}
+
+/** 修改默认的navigator点击态 **/
+
+.active {
+  color: red;
+}
+
+/** 自定义其他点击态样式类 **/
+
+.other-navigator-hover {
+  color: red;
+}
+.container-view {
+  width: 100%;
+  height: calc(100% - 51px);
+  /* margin-bottom: 51px; */
+  /* display: block; */
+  overflow: auto;
+  position: absolute;
+}
+.cate-box {
+  padding: 13px 10px 3px 10px;
+  border-bottom: 1px dashed #eee;
+}
+
+.list-title {
+  font-size: 16px;
+  color: #179B16;
+  width: 100%;
+  height: 22px;
+  padding: 3px 0px;
+  overflow: hidden;
+}
+.list-time {
+  text-align: right;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.home-button {
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  padding: 10px;
+}
+.btn-up {
+  float: left;
+}
+.btn-down {
+  float: right;
+  margin-right: 20px;
+}
+
+.detail-view {
+  padding: 10px;
+}
+.detail-title {
+  font-size: 18px;
+  text-align: center;
+  color: #179B16;
+}
+.return-home {
+  font-size: 18px;
+  text-align: left;
+  color: #179B16;
+  float: left;
+  margin-top: -25px;
+}
+.detail-cont {
+  padding: 10px 0px;
+  font-size: 14px;
+}
+.detail-other {
+  padding: 10px 0px;
+}
+.detail-time {
+  /* text-align: right; */
+  font-size: 12px;
+  color: #999;
+  padding: 2px 0px;
+}
+
+.btn-type {
+  margin: 10px 5px;
+}
+.no-more {
+  padding: 10px;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+}
+
+.message-view {
+  padding: 10px;
+  color: #888;
+  font-size: 16px;
+}
+
+.message-view .view-line {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.message-view textarea {
+  min-height: 100px;
+  width: 100%;
+}
+.message-btn {
+  text-align: right;
+  border-bottom: 0px;
+}
+
+.msg-author {
+  font-weight: bold;
+  font-size: 16px;
+  color: #316f31;
+}
+.msg-title {
+  font-size: 16px;
+  color: #179B16;
+  width: 100%;
+  height: 40px;
+  padding: 3px 0px;
+  overflow: hidden;
+}

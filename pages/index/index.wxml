@@ -1,0 +1,100 @@
+<import src="../../wxParse/wxParse.wxml" />
+<!--index.wxml-->
+<view class="container">
+
+  <view class="navigator-view">
+    <view class='navigator-cont' wx:for="{{category}}" wx:for-index="index" wx:for-item="item" wx:key="idx" hover-class="navigator-hover">
+      <!-- <image mode="{{item.id}}" src="/images/{{item.id}}.png"></image>  -->
+      <view data-id="{{item.id}}" data-index="{{index}}" bindtap="switchTab" class="iconfont icon-{{item.id}} {{curIndex === index?'active':''}}">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+
+  <scroll-view class='container-view' scroll-y="true" scroll-with-animation="true">
+    <block wx:if="{{curId === 'home'}}">
+      <view wx:if="{{articleList.length > 0}}" wx:for="{{articleList}}" wx:for-item="item" wx:for-index wx:key="idx">
+        <view data-id="{{item.id}}" class="cate-box">
+          <view class='list-title' data-id="{{item.id}}" data-cont="{{item}}" bindtap="openPage">『{{item.title.rendered}}』</view>
+          <view class='list-time'>{{item.date}}</view>
+        </view>
+      </view>
+      <view wx:if="{{articleList.length < 1}}" class="no-more">
+        没有更多了
+      </view>
+      <view class='home-button'>
+        <button wx:if="{{!firstPage}}" type="primary" class='btn-up' size="mini" data-id="up" bindtap="changePage"> 上一页 </button>
+        <button wx:if="{{!lastPage}}" type="primary" class='btn-down' size="mini" data-id="down" bindtap="changePage"> 下一页 </button>
+      </view>
+    </block>
+
+
+    <block wx:if="{{curId === 'type'}}">
+      <button wx:for="{{categories}}" wx:for-item="item" wx:for-index wx:key="idx" type="primary" class='btn-type' size="mini" data-id="{{item.id}}" data-cont="{{item}}" bindtap="getTypePage"> {{item.name}}({{item.count}}) </button>
+    </block>
+
+    <block wx:if="{{curId === 'message'}}">
+      <view class='message-view'>
+        <view class='view-line'>
+          <view>Name:</view>
+          <input bindinput="bindKeyInput" value="{{msName}}" data-id="name" placeholder="你的名字..." auto-focus />
+        </view>
+        <view class='view-line'>
+          <view>Email:</view>
+          <input bindinput="bindKeyInput" value="{{msEmail}}" data-id="email" placeholder="你的邮箱..." />
+        </view>
+        <view class='view-line'>
+          <view>Website:</view>
+          <input bindinput="bindKeyInput" value="{{msWebsite}}" data-id="website" placeholder="你的网站..." />
+        </view>
+        <view class='view-line'>
+          <view>Comment:</view>
+          <textarea bindinput="bindKeyInput" value="{{msCont}}" data-id="cont" auto-height placeholder="留言内容..." />
+        </view>
+        <view class='message-btn'>
+          <button type="primary" size="mini" bindtap="saveComment"> 提交 </button>
+        </view>
+      </view>
+
+      <!-- <block wx:for="{{msgArray}}" wx:key="">
+        {{index}}:
+        <template is="wxParse" data="{{wxParseData:item}}" />
+      </block> -->
+
+      <view wx:if="{{msgArray.length > 0}}" wx:for="{{msgArray}}" wx:for-item="item" wx:for-index wx:key="idx">
+        <view data-id="{{item.id}}" class="cate-box">
+          <template is="wxParse" data="{{wxParseData:item}}" />
+        </view>
+      </view>
+      <view wx:if="{{msgArray.length < 1}}" class="no-more">
+        留言板空荡荡的...
+      </view>
+    </block>
+
+    <block wx:if="{{curId === 'about'}}">
+
+    </block>
+
+    <block wx:if="{{curId === 'showDetail'}}">
+      <view class='detail-view'>
+        <view class='detail-title'>{{articleDetail.title.rendered}}</view>
+        <view wx:if="{{!noGoBack}}" class='return-home' bindtap="goBack"> {{returnHome}} </view>
+        <view class='detail-cont'>
+          <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+        <view class='detail-other'>
+          <view class='detail-time'>
+            作者: {{articleDetail.authorName}}
+          </view>
+          <view class='detail-time'>
+            分类: {{articleDetail.cateName}}
+          </view>
+          <view class='detail-time'>
+            时间: {{articleDetail.date}}
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </scroll-view>
+</view>

@@ -1,0 +1,43 @@
+@import "/wxParse/wxParse.wxss";
+
+/**app.wxss**/
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+   /* padding: 20rpx 0;  */
+  box-sizing: border-box;
+  position: absolute;
+  /* overflow: hidden; */
+  
+} 
+
+@font-face {
+  font-family: 'iconfont';  /* project id 724601 */
+  src: url('//at.alicdn.com/t/font_724601_kiwt1h182t.eot');
+  src: url('//at.alicdn.com/t/font_724601_kiwt1h182t.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_724601_kiwt1h182t.woff') format('woff'),
+  url('//at.alicdn.com/t/font_724601_kiwt1h182t.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_724601_kiwt1h182t.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-type:before { content: "\e600"; }
+
+.icon-message:before { content: "\e627"; }
+
+.icon-home:before { content: "\e650"; }
+
+.icon-about:before { content: "\e649"; }
+
+

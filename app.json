@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "遇见yoyic",
+    "navigationBarTextStyle": "light"
+  }
+}
