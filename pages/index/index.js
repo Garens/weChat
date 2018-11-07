@@ -54,6 +54,12 @@ Page({
     this.getCategories();
     // this.testClick();
   },
+  //转接客服
+  handleContact (e) {
+    console.log(111, e);
+    console.log(2222, e.path);
+    console.log(333, e.query);
+  },
   /**
    * 点击底部菜单切换
    */

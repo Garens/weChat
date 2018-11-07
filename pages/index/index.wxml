@@ -52,7 +52,8 @@
           <textarea bindinput="bindKeyInput" value="{{msCont}}" data-id="cont" auto-height placeholder="留言内容..." />
         </view>
         <view class='message-btn'>
-          <button type="primary" size="mini" bindtap="saveComment"> 提交 </button>
+          <button type="default" size="mini" open-type="contact" bindcontact="handleContact" class='btn-type'> 转接客服 </button>
+          <button type="primary" size="mini" bindtap="saveComment" class='btn-type'> 提交 </button>
         </view>
       </view>
 
